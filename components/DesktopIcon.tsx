@@ -15,7 +15,7 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({ label, icon, onClick }) => {
       <div className="text-cyber-cyan group-hover:text-cyber-neon group-hover:drop-shadow-[0_0_8px_rgba(0,255,65,0.8)] transition-all duration-300">
         {icon}
       </div>
-      <span className="text-xs font-mono text-cyan-100 group-hover:text-white bg-black/50 px-1 rounded shadow-sm text-center break-words w-full">
+      <span className="text-xs font-mono text-cyan-100 group-hover:text-white bg-black/50 px-1 rounded shadow-sm text-center w-full">
         {label}
       </span>
     </button>
