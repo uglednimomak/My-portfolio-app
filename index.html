@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ante Penava | System.Root</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=VT323&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'monospace'],
+              retro: ['"VT323"', 'monospace'],
+            },
+            colors: {
+              cyber: {
+                black: 'var(--c-bg)',
+                dark: 'var(--c-win)',
+                slate: 'var(--c-slate)',
+                neon: 'var(--c-primary)',
+                pink: 'var(--c-accent-1)',
+                cyan: 'var(--c-accent-2)',
+                yellow: 'var(--c-accent-3)'
+              }
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'glitch': 'glitch 1s linear infinite',
+            },
+            keyframes: {
+              glitch: {
+                '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
+                '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
+                '62%': { transform: 'translate(0,0) skew(5deg)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* DEFAULT: Hacker / Cyberpunk */
+      :root {
+        --c-bg: #050505;
+        --c-win: #0a0f14;
+        --c-slate: #1e293b;
+        --c-primary: #00ff41;    /* Classic Terminal Green */
+        --c-primary-dim: rgba(0, 255, 65, 0.3);
+        --c-accent-1: #ff00ff;   /* Pink */
+        --c-accent-2: #00ffff;   /* Cyan */
+        --c-accent-3: #fcee0a;   /* Yellow */
+      }
+
+      /* MOOD: Party / Social / Lazy */
+      body.mood-party {
+        --c-bg: #1a0b2e;         /* Deep Purple */
+        --c-win: #2d1b4e;        /* Lighter Purple */
+        --c-slate: #4c1d95;      /* Violet */
+        --c-primary: #f0abfc;    /* Neon Pink/Fuchsia */
+        --c-primary-dim: rgba(240, 171, 252, 0.3);
+        --c-accent-1: #fbbf24;   /* Amber/Gold */
+        --c-accent-2: #22d3ee;   /* Bright Cyan */
+        --c-accent-3: #f472b6;   /* Pink */
+      }
+
+      /* MOOD: Nature / Potato / Burned Out */
+      body.mood-nature {
+        --c-bg: #1c1917;         /* Warm Dark Grey (Stone-900) */
+        --c-win: #292524;        /* Stone-800 */
+        --c-slate: #44403c;      /* Stone-700 */
+        --c-primary: #84cc16;    /* Lime Green */
+        --c-primary-dim: rgba(132, 204, 22, 0.3);
+        --c-accent-1: #d97706;   /* Autumn Orange */
+        --c-accent-2: #14b8a6;   /* Teal */
+        --c-accent-3: #f59e0b;   /* Sun Yellow */
+      }
+
+      body {
+        background-color: var(--c-bg);
+        color: #e2e8f0;
+        overflow: hidden;
+        transition: background-color 0.5s ease;
+      }
+      /* Custom Scrollbar for Cyberpunk look */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--c-win); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--c-slate); 
+        border: 1px solid var(--c-primary);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--c-primary); 
+      }
+      .crt-overlay {
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
