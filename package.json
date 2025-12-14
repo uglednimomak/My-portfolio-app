@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Ante Penava Portfolio",
   "main": "index.tsx",
+  "scripts": {
+    "vercel-build": "npm run build",
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
