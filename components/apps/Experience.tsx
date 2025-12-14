@@ -5,7 +5,7 @@ const Experience: React.FC = () => {
     <div className="space-y-8 text-cyan-50">
       <div className="border-b border-cyber-pink/50 pb-4 mb-6">
         <h2 className="text-2xl font-bold text-cyber-pink font-retro tracking-widest">WORK_HISTORY_LOG</h2>
-        <p className="text-sm text-gray-400 mt-1">> Accessing restricted HR personnel files...</p>
+        <p className="text-sm text-gray-400 mt-1">`{'>'}` Accessing restricted HR personnel files...</p>
       </div>
 
       {/* Storyful */}

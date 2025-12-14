@@ -5,7 +5,7 @@ const Projects: React.FC = () => {
     <div className="space-y-12">
       <div className="border-b border-cyber-yellow/50 pb-4">
         <h2 className="text-2xl font-bold text-cyber-yellow font-retro tracking-widest">PROJECT_ARCHIVE</h2>
-        <p className="text-sm text-gray-400 mt-1">> Decrypting classified project files...</p>
+        <p className="text-sm text-gray-400 mt-1">`{'>'}` Decrypting classified project files...</p>
       </div>
 
       {/* ANNI */}
@@ -22,18 +22,18 @@ const Projects: React.FC = () => {
             <div className="bg-black/40 p-3 rounded border-l-2 border-cyber-pink">
                 <h4 className="text-cyber-pink font-bold mb-2">Capabilities</h4>
                 <ul className="space-y-1 text-gray-400">
-                    <li>> Entity-based enrichments</li>
-                    <li>> Semantic pattern mapping</li>
-                    <li>> Emergent narrative detection</li>
-                    <li>> Sentiment & Toxicity analysis</li>
+                    <li>`{'>'}` Entity-based enrichments</li>
+                    <li>`{'>'}` Semantic pattern mapping</li>
+                    <li>`{'>'}` Emergent narrative detection</li>
+                    <li>`{'>'}` Sentiment & Toxicity analysis</li>
                 </ul>
             </div>
             <div className="bg-black/40 p-3 rounded border-l-2 border-cyber-pink">
                  <h4 className="text-cyber-pink font-bold mb-2">Visualization</h4>
                  <ul className="space-y-1 text-gray-400">
-                    <li>> Nodes: Unique posts clustered by theme</li>
-                    <li>> Impact: Cluster size = narrative strength</li>
-                    <li>> Over Time: Growth/Decline analysis</li>
+                    <li>`{'>'}` Nodes: Unique posts clustered by theme</li>
+                    <li>`{'>'}` Impact: Cluster size = narrative strength</li>
+                    <li>`{'>'}` Over Time: Growth/Decline analysis</li>
                  </ul>
             </div>
         </div>
@@ -53,19 +53,19 @@ const Projects: React.FC = () => {
             <div className="bg-black/40 p-3 rounded border-l-2 border-cyber-cyan">
                 <h4 className="text-cyber-cyan font-bold mb-2">Network Topology</h4>
                 <ul className="space-y-1 text-gray-400">
-                    <li>> <span className="text-white">Nodes (Dots):</span> Twitter accounts. Size = Mentions.</li>
-                    <li>> <span className="text-white">Edges (Lines):</span> Mentions. Thickness = Frequency.</li>
-                    <li>> <span className="text-white">Centrality:</span> Indicates account importance.</li>
-                    <li>> <span className="text-white">Clusters:</span> Groups mentioning similar accounts.</li>
+                    <li>`{'>'}` <span className="text-white">Nodes (Dots):</span> Twitter accounts. Size = Mentions.</li>
+                    <li>`{'>'}` <span className="text-white">Edges (Lines):</span> Mentions. Thickness = Frequency.</li>
+                    <li>`{'>'}` <span className="text-white">Centrality:</span> Indicates account importance.</li>
+                    <li>`{'>'}` <span className="text-white">Clusters:</span> Groups mentioning similar accounts.</li>
                 </ul>
             </div>
             <div className="bg-black/40 p-3 rounded border-l-2 border-cyber-cyan">
                  <h4 className="text-cyber-cyan font-bold mb-2">Client Benefits</h4>
                  <ul className="space-y-1 text-gray-400">
-                    <li>> Identify Influential Voices (Journalists/Brands)</li>
-                    <li>> Map Issue Networks (Crisis spread)</li>
-                    <li>> Uncover White Space (Trends)</li>
-                    <li>> Understand Key Risks (Damaging narratives)</li>
+                    <li>`{'>'}` Identify Influential Voices (Journalists/Brands)</li>
+                    <li>`{'>'}` Map Issue Networks (Crisis spread)</li>
+                    <li>`{'>'}` Uncover White Space (Trends)</li>
+                    <li>`{'>'}` Understand Key Risks (Damaging narratives)</li>
                  </ul>
             </div>
         </div>
@@ -85,10 +85,10 @@ const Projects: React.FC = () => {
             <div className="bg-black/40 p-3 rounded border-l-2 border-cyber-neon">
                 <h4 className="text-cyber-neon font-bold mb-2">Features</h4>
                 <ul className="space-y-1 text-gray-400">
-                    <li>> Complex Boolean Searches (AND, OR, NOT)</li>
-                    <li>> Contextual Conversation View</li>
-                    <li>> CSV Data Export (for Data Studio)</li>
-                    <li>> Real-time content matching</li>
+                    <li>`{'>'}` Complex Boolean Searches (AND, OR, NOT)</li>
+                    <li>`{'>'}` Contextual Conversation View</li>
+                    <li>`{'>'}` CSV Data Export (for Data Studio)</li>
+                    <li>`{'>'}` Real-time content matching</li>
                 </ul>
             </div>
             <div className="bg-black/40 p-3 rounded border-l-2 border-cyber-neon">
