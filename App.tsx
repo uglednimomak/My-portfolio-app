@@ -128,7 +128,7 @@ const App: React.FC = () => {
           <div className="p-8 text-center">
             <h2 className="text-xl text-cyber-neon">TRANSMISSION LINK:</h2>
             <a href="mailto:ante.penava@example.com" className="text-white hover:underline block mt-4">
-              ante.penava@example.com
+              ante93366@gmail.com
             </a>
             <p className="mt-4 text-gray-400">Or use the Terminal...</p>
           </div>
