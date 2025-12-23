@@ -105,7 +105,7 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
           {getWifiIcon()}
           <div className="flex flex-col items-end leading-none">
             <span className="text-cyber-cyan font-mono text-xs">{time.toLocaleTimeString()}</span>
-            <span className="text-gray-500 font-mono text-[10px] hidden sm:inline">{getWifiStatusText()}</span>
+            <span className="text-gray-300 font-mono text-[10px] hidden sm:inline">{getWifiStatusText()}</span>
           </div>
         </div>
       </div>
