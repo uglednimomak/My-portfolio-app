@@ -52,15 +52,17 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center space-y-4">
-              <div className="text-6xl">🚨</div>
+              <div className="text-6xl">🦄</div>
               <h2 className="text-2xl font-bold text-cyber-neon font-retro">ACCESS DENIED</h2>
-              <p className="text-gray-300 font-mono">Just kidding! Start menu coming soon™</p>
-              <p className="text-cyber-cyan font-mono text-sm italic">[HACKER VOICE] I'm in...</p>
+              <p className="text-gray-300 font-mono">Oops! You found the secret Start Menu. But it's still in the oven 🍕</p>
+              <p className="text-cyber-cyan font-mono text-sm italic">[HACKER VOICE] I'm in... but there's only memes here.</p>
+              <p className="text-cyber-pink font-mono text-xs">✨ Fun Fact: 73% of Start Menus are just portals to procrastination.</p>
+              <p className="text-cyber-yellow font-mono text-xs">🚀 Stay tuned for more features! Or go touch some grass 🌱</p>
               <button
                 onClick={() => setShowStartModal(false)}
                 className="mt-4 px-6 py-2 bg-cyber-neon text-cyber-black font-bold hover:bg-cyber-cyan transition-all shadow-[0_0_20px_rgba(var(--c-primary),0.3)]"
               >
-                CLOSE
+                CLOSE THE PORTAL
               </button>
             </div>
           </div>
