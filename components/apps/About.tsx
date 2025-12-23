@@ -1,6 +1,5 @@
 import React from 'react';
 import { Mood } from '../../types';
-import { AlertTriangle, Music, Tent } from 'lucide-react';
 
 interface AboutProps {
   mood: Mood;
@@ -10,33 +9,6 @@ const About: React.FC<AboutProps> = ({ mood }) => {
   return (
     <div className="relative flex flex-col md:flex-row gap-8 items-start text-cyan-50 h-full">
       
-      {/* MOOD OVERLAYS */}
-      {mood === Mood.PARTY && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center bg-purple-900/80 backdrop-blur-sm border-2 border-pink-500 animate-pulse-fast p-8 text-center">
-            <div className="transform -rotate-6 bg-black/80 p-6 border border-pink-500 shadow-[0_0_30px_#ff00ff]">
-                <Music size={48} className="mx-auto text-pink-500 mb-4 animate-bounce" />
-                <h2 className="text-2xl font-bold text-pink-500 font-retro tracking-widest uppercase mb-2">⚠ System Status: AWAY</h2>
-                <p className="text-white font-mono text-sm">
-                    Currently partying somewhere in an abandoned warehouse. <br/>
-                    Signal is weak. Please leave a message after the drop.
-                </p>
-            </div>
-        </div>
-      )}
-
-      {mood === Mood.NATURE && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center bg-stone-900/90 backdrop-blur-md border-2 border-orange-500 p-8 text-center">
-             <div className="bg-stone-800 p-6 border border-orange-500 shadow-[0_0_30px_rgba(249,115,22,0.5)]">
-                <Tent size={48} className="mx-auto text-orange-500 mb-4" />
-                <h2 className="text-2xl font-bold text-orange-500 font-retro tracking-widest uppercase mb-2">⚠ System Status: OFFLINE</h2>
-                <p className="text-gray-300 font-mono text-sm">
-                    Gone to the woods. Playing guitar on the rocks near the river.<br/>
-                    Rebooting mental operating system...
-                </p>
-            </div>
-        </div>
-      )}
-
       {/* Standard Bio Content */}
       <div className="w-full md:w-1/3 flex flex-col items-center relative z-0">
         <div className="w-48 h-48 bg-cyber-slate border-4 border-cyber-neon rounded-full overflow-hidden relative shadow-[0_0_20px_rgba(0,255,65,0.3)]">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Briefcase, FolderGit2, GraduationCap, Terminal as TerminalIcon, Mail } from 'lucide-react';
+import { User, Briefcase, FolderGit2, GraduationCap, Terminal as TerminalIcon, Mail, Gauge, Music, Tent } from 'lucide-react';
 import { AppId, SystemApp, Mood } from './types';
 import DesktopIcon from './components/DesktopIcon';
 import Window from './components/Window';
@@ -9,6 +9,7 @@ import Experience from './components/apps/Experience';
 import Projects from './components/apps/Projects';
 import Education from './components/apps/Education';
 import Terminal from './components/apps/Terminal';
+import Lighthouse from './components/apps/Lighthouse';
 
 const INITIAL_APPS: SystemApp[] = [
   {
@@ -58,6 +59,14 @@ const INITIAL_APPS: SystemApp[] = [
     isOpen: false,
     isMinimized: false,
     zIndex: 5,
+  },
+  {
+    id: AppId.LIGHTHOUSE,
+    title: 'LIGHTHOUSE',
+    icon: <Gauge size={24} />,
+    isOpen: false,
+    isMinimized: false,
+    zIndex: 4,
   },
 ];
 
@@ -133,6 +142,8 @@ const App: React.FC = () => {
             <p className="mt-4 text-gray-400">Or use the Terminal...</p>
           </div>
         );
+      case AppId.LIGHTHOUSE:
+        return <Lighthouse />;
       default:
         return null;
     }
@@ -156,11 +167,50 @@ const App: React.FC = () => {
       {/* CRT Overlay Effect */}
       <div className="fixed inset-0 z-[100] crt-overlay pointer-events-none"></div>
 
+      {/* MOOD OVERLAYS - Global */}
+      {mood === Mood.PARTY && (
+        <div className="fixed inset-x-0 top-0 bottom-12 z-[40] flex items-center justify-center bg-purple-900/80 backdrop-blur-sm border-2 border-pink-500 animate-pulse-fast p-8 text-center pointer-events-none">
+            <div className="transform -rotate-6 bg-black/80 p-6 border border-pink-500 shadow-[0_0_30px_#ff00ff]">
+                <Music size={48} className="mx-auto text-pink-500 mb-4 animate-bounce" />
+                <h2 className="text-2xl font-bold text-pink-500 font-retro tracking-widest uppercase mb-2">⚠ System Status: AWAY</h2>
+                <p className="text-white font-mono text-sm">
+                    Currently partying somewhere in an abandoned warehouse. <br/>
+                    Signal is weak. Please leave a message after the drop.
+                </p>
+            </div>
+        </div>
+      )}
+
+      {mood === Mood.NATURE && (
+        <div className="fixed inset-x-0 top-0 bottom-12 z-[40] flex items-center justify-center bg-stone-900/90 backdrop-blur-md border-2 border-orange-500 p-8 text-center pointer-events-none">
+             <div className="bg-stone-800 p-6 border border-orange-500 shadow-[0_0_30px_rgba(249,115,22,0.5)]">
+                <Tent size={48} className="mx-auto text-orange-500 mb-4" />
+                <h2 className="text-2xl font-bold text-orange-500 font-retro tracking-widest uppercase mb-2">⚠ System Status: OFFLINE</h2>
+                <p className="text-gray-300 font-mono text-sm">
+                    Gone to the woods. Playing guitar on the rocks near the river.<br/>
+                    Rebooting mental operating system...
+                </p>
+            </div>
+        </div>
+      )}
+
       {/* Main Content Area */}
       <main className="relative z-10 h-[calc(100vh-48px)]">
         {/* Desktop Area */}
         <div className="p-4 md:p-8 grid grid-flow-col grid-rows-6 content-start gap-4 w-fit">
-          {apps.map(app => (
+          {apps.filter(app => app.id !== AppId.LIGHTHOUSE).map(app => (
+            <DesktopIcon 
+              key={app.id} 
+              label={app.title} 
+              icon={app.icon} 
+              onClick={() => handleOpenApp(app.id)} 
+            />
+          ))}
+        </div>
+
+        {/* Lighthouse Icon - Top Right Corner */}
+        <div className="absolute top-4 right-4 md:top-8 md:right-8">
+          {apps.filter(app => app.id === AppId.LIGHTHOUSE).map(app => (
             <DesktopIcon 
               key={app.id} 
               label={app.title} 

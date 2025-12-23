@@ -7,6 +7,7 @@ export enum AppId {
   EDUCATION = 'EDUCATION',
   TERMINAL = 'TERMINAL',
   CONTACT = 'CONTACT',
+  LIGHTHOUSE = 'LIGHTHOUSE',
 }
 
 export enum Mood {

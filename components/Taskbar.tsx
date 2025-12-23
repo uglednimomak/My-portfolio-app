@@ -11,6 +11,7 @@ interface TaskbarProps {
 
 const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, onMoodChange }) => {
   const [time, setTime] = useState(new Date());
+  const [showStartModal, setShowStartModal] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -39,11 +40,42 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
   };
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 h-12 bg-cyber-slate border-t-2 border-cyber-neon/30 flex items-center justify-between px-2 shadow-[0_-5px_20px_rgba(0,0,0,0.8)] z-50 transition-colors duration-500">
-      
-      {/* Left Section: Start & Apps */}
+    <>
+      {/* Start Menu Modal */}
+      {showStartModal && (
+        <div 
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[100]"
+          onClick={() => setShowStartModal(false)}
+        >
+          <div 
+            className="bg-cyber-slate border-2 border-cyber-neon p-8 max-w-md w-full mx-4 shadow-[0_0_50px_rgba(var(--c-primary),0.5)] animate-pulse-slow"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center space-y-4">
+              <div className="text-6xl">🚨</div>
+              <h2 className="text-2xl font-bold text-cyber-neon font-retro">ACCESS DENIED</h2>
+              <p className="text-gray-300 font-mono">Just kidding! Start menu coming soon™</p>
+              <p className="text-cyber-cyan font-mono text-sm italic">[HACKER VOICE] I'm in...</p>
+              <button
+                onClick={() => setShowStartModal(false)}
+                className="mt-4 px-6 py-2 bg-cyber-neon text-cyber-black font-bold hover:bg-cyber-cyan transition-all shadow-[0_0_20px_rgba(var(--c-primary),0.3)]"
+              >
+                CLOSE
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-cyber-slate border-t-2 border-cyber-neon/30 flex items-center justify-between px-2 shadow-[0_-5px_20px_rgba(0,0,0,0.8)] z-50 transition-colors duration-500">
+        
+        {/* Left Section: Start & Apps */}
       <div className="flex items-center gap-4 flex-1 overflow-hidden">
-        <button aria-label="Start menu" className="shrink-0 flex items-center gap-2 bg-cyber-neon/10 hover:bg-cyber-neon/20 border border-cyber-neon px-3 py-1 text-cyber-neon font-bold font-retro text-xl transition-all shadow-[0_0_10px_rgba(var(--c-primary),0.2)]">
+        <button 
+          onClick={() => setShowStartModal(true)}
+          aria-label="Start menu" 
+          className="shrink-0 flex items-center gap-2 bg-cyber-neon/10 hover:bg-cyber-neon/20 border border-cyber-neon px-3 py-1 text-cyber-neon font-bold font-retro text-xl transition-all shadow-[0_0_10px_rgba(var(--c-primary),0.2)]"
+        >
           <Power size={18} />
           <span className="hidden sm:inline">START</span>
         </button>
@@ -109,7 +141,8 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
