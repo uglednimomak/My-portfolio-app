@@ -40,9 +40,8 @@ const About: React.FC<AboutProps> = ({ mood }) => {
       {/* Standard Bio Content */}
       <div className="w-full md:w-1/3 flex flex-col items-center relative z-0">
         <div className="w-48 h-48 bg-cyber-slate border-4 border-cyber-neon rounded-full overflow-hidden relative shadow-[0_0_20px_rgba(0,255,65,0.3)]">
-           {/* Placeholder for Profile Image */}
            <img 
-            src="https://picsum.photos/400/400?grayscale" 
+            src="/images/profile.jpeg" 
             alt="Ante Penava"
             className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
            />
