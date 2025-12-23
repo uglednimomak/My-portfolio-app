@@ -20,12 +20,14 @@ const Window: React.FC<WindowProps> = ({ app, onClose, onMinimize, onFocus, chil
         <div className="flex gap-2">
           <button 
             onClick={(e) => { e.stopPropagation(); onMinimize(app.id); }}
+            aria-label={`Minimize ${app.title} window`}
             className="p-1 hover:bg-cyber-neon/20 hover:text-cyber-neon text-gray-400 transition-colors"
           >
             <Minus size={14} />
           </button>
           <button 
             onClick={(e) => { e.stopPropagation(); onClose(app.id); }}
+            aria-label={`Close ${app.title} window`}
             className="p-1 hover:bg-red-500/80 hover:text-white text-gray-400 transition-colors"
           >
             <X size={14} />

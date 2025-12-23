@@ -43,7 +43,7 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
       
       {/* Left Section: Start & Apps */}
       <div className="flex items-center gap-4 flex-1 overflow-hidden">
-        <button className="shrink-0 flex items-center gap-2 bg-cyber-neon/10 hover:bg-cyber-neon/20 border border-cyber-neon px-3 py-1 text-cyber-neon font-bold font-retro text-xl transition-all shadow-[0_0_10px_rgba(var(--c-primary),0.2)]">
+        <button aria-label="Start menu" className="shrink-0 flex items-center gap-2 bg-cyber-neon/10 hover:bg-cyber-neon/20 border border-cyber-neon px-3 py-1 text-cyber-neon font-bold font-retro text-xl transition-all shadow-[0_0_10px_rgba(var(--c-primary),0.2)]">
           <Power size={18} />
           <span className="hidden sm:inline">START</span>
         </button>
@@ -54,6 +54,7 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
             <button
               key={app.id}
               onClick={() => onAppClick(app.id)}
+              aria-label={`${app.isMinimized ? 'Restore' : 'Focus on'} ${app.title} window`}
               className={`
                 flex items-center gap-2 px-3 py-1 font-mono text-xs border-b-2 transition-all w-32 shrink-0 truncate
                 ${app.isMinimized 
@@ -75,6 +76,7 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
         <div className="hidden md:flex items-center gap-1 bg-cyber-dark/30 p-1 rounded border border-cyber-slate/50">
           <button 
             onClick={() => onMoodChange(Mood.HACKER)}
+            aria-label="Switch to Hacker mode"
             title="Mode: Hacker (Default)"
             className={`p-1.5 rounded transition-all ${currentMood === Mood.HACKER ? 'bg-cyber-neon text-cyber-black shadow-[0_0_8px_var(--c-primary)]' : 'text-gray-500 hover:text-cyber-neon'}`}
           >
@@ -82,6 +84,7 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
           </button>
           <button 
             onClick={() => onMoodChange(Mood.PARTY)}
+            aria-label="Switch to Party mode"
             title="Mode: Party / Social"
             className={`p-1.5 rounded transition-all ${currentMood === Mood.PARTY ? 'bg-cyber-neon text-cyber-black shadow-[0_0_8px_var(--c-primary)]' : 'text-gray-500 hover:text-cyber-neon'}`}
           >
@@ -89,6 +92,7 @@ const Taskbar: React.FC<TaskbarProps> = ({ openApps, onAppClick, currentMood, on
           </button>
           <button 
             onClick={() => onMoodChange(Mood.NATURE)}
+            aria-label="Switch to Nature mode"
             title="Mode: Burned Out / Nature"
             className={`p-1.5 rounded transition-all ${currentMood === Mood.NATURE ? 'bg-cyber-neon text-cyber-black shadow-[0_0_8px_var(--c-primary)]' : 'text-gray-500 hover:text-cyber-neon'}`}
           >

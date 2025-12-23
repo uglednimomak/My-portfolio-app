@@ -156,30 +156,33 @@ const App: React.FC = () => {
       {/* CRT Overlay Effect */}
       <div className="fixed inset-0 z-[100] crt-overlay pointer-events-none"></div>
 
-      {/* Desktop Area */}
-      <div className="relative z-10 h-[calc(100vh-48px)] p-4 md:p-8 grid grid-flow-col grid-rows-6 content-start gap-4 w-fit">
-        {apps.map(app => (
-          <DesktopIcon 
-            key={app.id} 
-            label={app.title} 
-            icon={app.icon} 
-            onClick={() => handleOpenApp(app.id)} 
-          />
-        ))}
-      </div>
+      {/* Main Content Area */}
+      <main className="relative z-10 h-[calc(100vh-48px)]">
+        {/* Desktop Area */}
+        <div className="p-4 md:p-8 grid grid-flow-col grid-rows-6 content-start gap-4 w-fit">
+          {apps.map(app => (
+            <DesktopIcon 
+              key={app.id} 
+              label={app.title} 
+              icon={app.icon} 
+              onClick={() => handleOpenApp(app.id)} 
+            />
+          ))}
+        </div>
 
-      {/* Windows Layer */}
-      {apps.map(app => (
-        <Window 
-          key={app.id} 
-          app={app} 
-          onClose={handleCloseApp} 
-          onMinimize={handleMinimizeApp}
-          onFocus={handleFocusApp}
-        >
-          {renderAppContent(app.id)}
-        </Window>
-      ))}
+        {/* Windows Layer */}
+        {apps.map(app => (
+          <Window 
+            key={app.id} 
+            app={app} 
+            onClose={handleCloseApp} 
+            onMinimize={handleMinimizeApp}
+            onFocus={handleFocusApp}
+          >
+            {renderAppContent(app.id)}
+          </Window>
+        ))}
+      </main>
 
       {/* Taskbar */}
       <Taskbar 
